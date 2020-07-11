@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP.master.cs" Inherits="MP" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <asp:ContentPlaceHolder ID="style" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="is-preload">
+    <form id="form1" runat="server">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+                    <div class="se-pre-con"></div>
+                    <!-- loader -->
+
+                    <!-- Header -->
+                    <header id="header">
+                        <pre>
+<strong>涵瑄工作室</strong>                       
+by F611超級大廢物們
+                        </pre>
+
+                        <span>
+                            <img style="display: block; margin-left: auto; margin-right: auto;" src="images/logo.jpg" alt="" />
+                        </span>
+
+                        <ul class="icons">
+
+                            <li><a href="https://www.youtube.com/watch?v=4JH1FDYqmwg" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
+                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                        </ul>
+                    </header>
+
+                    <!-- Section -->
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <div class="inner">
+
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="login.aspx">
+                                <h2>登入/註冊</h2>                                
+                            </asp:HyperLink>
+                            <asp:Label ID="Label1" runat="server" Text="您好" Visible="False"></asp:Label>
+                            <asp:Button ID="Button1" runat="server" Text="登出" Font-Size="Larger" Font-Bold="True" Height="50px" Width="70px" Visible="False" OnClick="Button1_Click" />
+
+                        </header>
+                        <ul>
+                            <li><a href="index.aspx">首頁</a></li>
+                            <li>
+                                <span class="opener">介紹涵瑄</span>
+                                <ul>
+                                    <li><a href="about.aspx">團隊簡介</a></li>
+                                    <li><a href="people.aspx">成員介紹</a></li>
+                                    <li><a href="winning.aspx">團隊經歷</a></li>
+                                    <li><a href="picture.aspx">活動剪影</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">成果作品</span>
+                                <ul>
+                                    <li><a href="topic01.aspx">翻滾吧！吸管</a></li>
+                                    <li><a href="topic02.aspx">人臉辨識_看我R</a></li>
+                                    <li><a href="topic03.aspx">圖像辨識_智慧購物車</a></li>
+                                    <li><a href="course.aspx">高中職體驗課程</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="shopping.aspx">課程預約</a></li>
+                            <li><a href="contact.aspx">與我聯繫</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Section -->
+                    <section>
+                        <header class="major">
+                            <h2>F611守則</h2>
+                        </header>
+                        <pre>1.保持專題室環境衛生
+2.討論專題降低音量，勿影響他人
+3.記得適時地放鬆
+4.最後離開的記得關閉所有電源並鎖門</pre>
+                        <ul class="contact">
+                            <li class="icon solid fa-envelope"><a href="#">IM@gm.lhu.edu.tw</a></li>
+                            <li class="icon solid fa-phone">(02) 8209-3211</li>
+                            <li class="icon solid fa-home">桃園市龜山區萬壽路一段300號<br />
+                                F611, 涵瑄工作室</li>
+                        </ul>
+                    </section>
+
+                    <!-- Footer -->
+                    <footer id="footer">
+                        <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                    </footer>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </form>
+</body>
+</html>
