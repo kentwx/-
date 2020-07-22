@@ -10,19 +10,19 @@ public partial class _index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session.IsNewSession == true)
+        StreamReader objStreamReader = new StreamReader(Page.MapPath("Counter.txt"));
+        long lngCounter = Convert.ToInt32(objStreamReader.ReadLine());
+        objStreamReader.Close();
+
+        if (Session.IsNewSession)
         {
-            Application.Lock();
-            Session["Visited"] = true;
-            StreamReader dr = new StreamReader(Server.MapPath("Counter.txt"));
-            Application["Counter"] = int.Parse(dr.ReadLine());
-            dr.Close();
-            Application["Counter"] = int.Parse(Application["Counter"].ToString()) + 1;
-            StreamWriter wr = new StreamWriter(Server.MapPath("Counter.txt"));
-            wr.WriteLine(Application["Counter"]);
-            wr.Close();
-            Application.UnLock();
+            lngCounter += 1;
+            Session["Visited_S"] = lngCounter;
+            StreamWriter objStreamWriter = new StreamWriter(MapPath("Counter.txt"), false);
+            objStreamWriter.WriteLine(lngCounter);
+            objStreamWriter.Close();
         }
-        lblCounter.Text = "您是本站第" + Application["Counter"].ToString() + "位的訪客";
+
+        lblCounter.Text = "您是本站第" + Session["Visited_S"] + "位的訪客";
     }
 }
